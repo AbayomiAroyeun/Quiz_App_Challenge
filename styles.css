@@ -1,0 +1,76 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded;
+}
+
+
+:root{
+    --color-neutral: 200;
+    --color-wrong: 0;
+    --color-correct: 145;
+}
+body{
+    --color: var(--color-nuetral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--color)),100%, 20%;
+
+}
+
+body.correct{
+    --color: var(--color-correct);
+}
+body.wrong{
+    --color: var(--color-wrong);
+}
+
+.container {
+    width: 400px;
+    background-color: chartreuse;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px; 
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin:20px 0;
+}
+.btn{
+--color: var(--color-neutral);
+border: 1px solid hsl(var(--color),100%, 30%);
+background-color: hsl(var(--color),100%,50%);
+border: radius 5px;
+padding:5px 10px;
+color:azure;
+outline:aqua;
+
+
+    border-radius: 10px;
+
+}
+.btn:hover{
+    border-color: red;
+}
+.btn.correct {
+--color: var(--color-correct);
+}
+.btn.wrong{
+    --color: var(--color-wrong);
+}
+.start-btn, Next-btn {
+    border-radius: 7px;
+    background-color: blue;
+    padding: 5px 6px;
+
+}
+.hide {
+    display: none;
+}
