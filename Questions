@@ -1,0 +1,5 @@
+Commonly used data DO Not include:(1-strings,2-booleans,3-ALERTS,4-numbers)
+The condition in an if / else statement is enclosed with(1 quotes, 2-curly brackets, 3-PARENTHESIS, 4-square brackets)
+A very useful tool used during development and debugging for printing content to the debugger is;(1-javaScript,2-terminal/bash,3-for loops,4-CONSOLE.LOG)
+Arrays in Javascript can be used to store (1-numbers and strings,2-other arrays,3-booleans,4-all of the above)
+
