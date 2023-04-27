@@ -1,6 +1,6 @@
 # AbayomiAroyeun' Quiz App
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[License: MIT]
   
 ## Description:
 This application is a quiz app for short questions. It has some questions that need to be answered. The answers are subsequectly verified.
