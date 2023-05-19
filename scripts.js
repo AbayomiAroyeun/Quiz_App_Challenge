@@ -5,6 +5,10 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 let shuffledQuestions, currentQuestionIndex;
 const startPageEl = document.getElementById('start-page');
+let timerElement = document.getElementById('timer');
+let timerInterval;
+const questionTime = 10; // Time per question in seconds
+let score = 0;
 
 startButton.addEventListener('click', startTheQuiz);
 setNextBtn.addEventListener('click', setNextQuestion);
@@ -18,11 +22,19 @@ function startTheQuiz() {
   currentQuestionIndex = 0;
   console.log(questions[currentQuestionIndex]);
   showQuestion(questions[currentQuestionIndex]);
+  startTimer();
 }
 
 function setNextQuestion() {
   currentQuestionIndex++;
-  showQuestion(questions[currentQuestionIndex]);
+  clearInterval(timerInterval); // Clear previous timer
+  if (currentQuestionIndex < questions.length) {
+    showQuestion(questions[currentQuestionIndex]);
+    startTimer();
+  } else {
+    // Quiz completed
+    endQuiz();
+  }
 }
 
 function showQuestion(question) {
@@ -38,10 +50,47 @@ function showQuestion(question) {
   document.getElementById('choice2').addEventListener('click', selectAnswer);
   document.getElementById('choice3').addEventListener('click', selectAnswer);
   document.getElementById('choice4').addEventListener('click', selectAnswer);
+
+  resetTimer();
 }
 
 function selectAnswer() {
   console.log('working');
+}
+
+function startTimer() {
+  let time = questionTime;
+  timerElement.textContent = time;
+
+  timerInterval = setInterval(() => {
+    time--;
+    timerElement.textContent = time;
+
+    if (time <= 0) {
+      // Time's up, move to next question
+      clearInterval(timerInterval);
+      setNextQuestion();
+    }
+  }, 1000);
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  timerElement.textContent = '';
+}
+
+function endQuiz() {
+  // Hide question container and next button
+  questionContainerElement.classList.add('hide');
+  setNextBtn.classList.add('hide');
+
+  // Calculate final score
+  const finalScore = (score / questions.length) * 100;
+
+  // Display final score
+  const scoreElement = document.createElement('p');
+  scoreElement.textContent = `Your final score: ${finalScore}%`;
+  questionContainerElement.appendChild(scoreElement);
 }
 
 const questions = [
