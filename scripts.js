@@ -96,6 +96,8 @@ function endQuiz() {
  
    // Append the score element to the question container
    questionContainerElement.appendChild(scoreElement);
+   //Show the score container
+   scoreContainerElement.classList.remove('hide');
 }
 
 const questions = [
