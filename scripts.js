@@ -45,17 +45,20 @@ function showQuestion(question) {
   document.getElementById('choice3').textContent = question.Answer[2].text;
   document.getElementById('choice4').textContent = question.Answer[3].text;
 
+
   // Attach event listeners to answer buttons
-  document.getElementById('choice1').addEventListener('click', selectAnswer);
-  document.getElementById('choice2').addEventListener('click', selectAnswer);
-  document.getElementById('choice3').addEventListener('click', selectAnswer);
-  document.getElementById('choice4').addEventListener('click', selectAnswer);
-
-  resetTimer();
-}
-
-function selectAnswer() {
-  console.log('working');
+  document.getElementById('choice1').addEventListener('click', function () {
+    selectAnswer(question.Answer[0].correct);
+  });
+  document.getElementById('choice2').addEventListener('click', function () {
+    selectAnswer(question.Answer[1].correct);
+  });
+  document.getElementById('choice3').addEventListener('click', function () {
+    selectAnswer(question.Answer[2].correct);
+  });
+  document.getElementById('choice4').addEventListener('click', function () {
+    selectAnswer(question.Answer[3].correct);
+  });
 }
 
 function startTimer() {

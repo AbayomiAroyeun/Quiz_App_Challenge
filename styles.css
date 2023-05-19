@@ -48,7 +48,11 @@ body {
 .hide {
     display: none;
 }
-
+#timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
 
  /* #answer-buttons{
    
