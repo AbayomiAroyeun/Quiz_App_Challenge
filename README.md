@@ -46,6 +46,7 @@ THEN I can save my initials and score
 
 
 ## Built With
+- Dynamic CSS, HTML
 - Tutor Assistant
 - Saiyan Pride
 - JavaScript
